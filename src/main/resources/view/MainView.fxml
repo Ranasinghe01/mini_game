@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep12.mini_game.controller.MainViewController">
+   <children>
+      <Label fx:id="lblBackground1">
+         <graphic>
+            <ImageView fitHeight="478.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/360_F_300101671_g05kRIreJ3N9RVmMwZIRJmh8BAFLyTxU.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblBackground2" layoutX="10.0" layoutY="10.0">
+         <graphic>
+            <ImageView fitHeight="478.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/360_F_300101671_g05kRIreJ3N9RVmMwZIRJmh8BAFLyTxU.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblMan" layoutX="21.0" layoutY="313.0" prefHeight="142.0" prefWidth="115.0">
+         <graphic>
+            <ImageView fitHeight="133.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/spiderman-superhero.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblObject" layoutX="686.0" layoutY="315.0" prefHeight="153.0" prefWidth="111.0">
+         <graphic>
+            <ImageView fitHeight="147.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/zombie.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblObject2" layoutX="336.0" layoutY="265.0" prefHeight="162.0" prefWidth="111.0">
+         <graphic>
+            <ImageView fitHeight="141.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/plants-vs-zombies-zombie-bailarin.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblCoin" layoutX="574.0" layoutY="348.0" prefHeight="102.0" prefWidth="96.0">
+         <graphic>
+            <ImageView fitHeight="95.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/money-coin.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lblBTC" layoutX="209.0" layoutY="349.0" prefHeight="102.0" prefWidth="96.0">
+         <graphic>
+            <ImageView fitHeight="100.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/7616919.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>

@@ -25,16 +25,16 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblMan" layoutX="21.0" layoutY="313.0" prefHeight="142.0" prefWidth="115.0">
+      <Label fx:id="lblMan" layoutX="300.0" layoutY="313.0" prefHeight="153.0" prefWidth="128.0">
          <graphic>
-            <ImageView fitHeight="133.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="134.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/spiderman-superhero.gif" />
                </image>
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblObject" layoutX="686.0" layoutY="315.0" prefHeight="153.0" prefWidth="111.0">
+      <Label fx:id="lblObject" layoutX="680.0" layoutY="313.0" prefHeight="153.0" prefWidth="111.0">
          <graphic>
             <ImageView fitHeight="147.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -43,7 +43,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblObject2" layoutX="336.0" layoutY="265.0" prefHeight="162.0" prefWidth="111.0">
+      <Label fx:id="lblObject2" layoutX="340.0" layoutY="313.0" prefHeight="162.0" prefWidth="111.0">
          <graphic>
             <ImageView fitHeight="141.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -52,7 +52,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblCoin" layoutX="574.0" layoutY="348.0" prefHeight="102.0" prefWidth="96.0">
+      <Label fx:id="lblCoin" layoutX="580.0" layoutY="313.0" prefHeight="102.0" prefWidth="96.0">
          <graphic>
             <ImageView fitHeight="95.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -61,7 +61,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblBTC" layoutX="209.0" layoutY="349.0" prefHeight="102.0" prefWidth="96.0">
+      <Label fx:id="lblBTC" layoutX="200.0" layoutY="313.0" prefHeight="102.0" prefWidth="96.0">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
                <image>

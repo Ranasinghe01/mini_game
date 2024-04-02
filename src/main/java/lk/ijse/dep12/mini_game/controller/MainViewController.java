@@ -35,25 +35,53 @@ public class MainViewController {
         });
 
         KeyFrame kf1 = new KeyFrame(Duration.millis(400), actionEvent -> {
-            if (lblObject.getLayoutX() < -20) lblObject.setLayoutX(852);
-            else lblObject.setLayoutX(lblObject.getLayoutX() - 20);
+            if (lblObject.getLayoutX() < -20) lblObject.setLayoutX(860);
+            else {
+                lblObject.setLayoutX(lblObject.getLayoutX() - 20);
+
+                if (lblObject.getLayoutX()  == lblMan.getLayoutX() && lblMan.getLayoutY() == lblObject.getLayoutY()) {
+                    lblMan.setVisible(false);
+                }
+            }
         });
+
         KeyFrame kf2 = new KeyFrame(Duration.millis(0), actionEvent -> {
             if (lblBackground1.getLayoutX() == -820) lblBackground1.setLayoutX(0);
             else lblBackground1.setLayoutX(lblBackground1.getLayoutX() - 20);
             lblBackground2.setLayoutX(lblBackground1.getLayoutX() + 819);
         });
+
         KeyFrame kf3 = new KeyFrame(Duration.millis(300), actionEvent -> {
-            if (lblObject2.getLayoutX() < -20) lblObject2.setLayoutX(852);
-            else lblObject2.setLayoutX(lblObject2.getLayoutX() - 20);
+            if (lblObject2.getLayoutX() < -20) lblObject2.setLayoutX(860);
+            else {
+                lblObject2.setLayoutX(lblObject2.getLayoutX() - 20);
+
+                if (lblObject2.getLayoutX() == lblMan.getLayoutX() && lblObject2.getLayoutY() == lblMan.getLayoutY()) {
+                    lblMan.setVisible(false);
+                }
+            }
         });
+
         KeyFrame kf4 = new KeyFrame(Duration.millis(500), actionEvent -> {
-            if (lblCoin.getLayoutX() < -20) lblCoin.setLayoutX(852);
-            else lblCoin.setLayoutX(lblCoin.getLayoutX() - 20);
+            if (lblCoin.getLayoutX() < -20) lblCoin.setLayoutX(860);
+            else {
+                lblCoin.setLayoutX(lblCoin.getLayoutX() - 20);
+
+                if (lblCoin.getLayoutX() == lblMan.getLayoutX() && lblCoin.getLayoutY() == lblMan.getLayoutY()) {
+                    lblCoin.setVisible(false);
+                }
+            }
         });
+
         KeyFrame kf5 = new KeyFrame(Duration.millis(400), actionEvent -> {
-            if(lblBTC.getLayoutX() < -20) lblBTC.setLayoutX(852);
-            else lblBTC.setLayoutX(lblBTC.getLayoutX() - 20);
+            if(lblBTC.getLayoutX() < -20) lblBTC.setLayoutX(860);
+            else {
+                lblBTC.setLayoutX(lblBTC.getLayoutX() - 20);
+
+                if (lblBTC.getLayoutX() == lblMan.getLayoutX() && lblBTC.getLayoutY() == lblMan.getLayoutY()) {
+                    lblBTC.setVisible(false);
+                }
+            }
         });
 
         TIME_LINE.getKeyFrames().addAll(kf1, kf2,kf3, kf4, kf5);

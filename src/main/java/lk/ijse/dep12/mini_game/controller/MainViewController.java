@@ -19,8 +19,13 @@ public class MainViewController {
     public Label lblObject2;
     public Label lblBTC;
     public Label lblCoin;
+    public Label lblScore;
+    public Label lblGameOver;
+
+    private int count;
 
     public void initialize() {
+
         lblBackground2.setLayoutY(lblBackground1.getLayoutY());
         lblBackground2.setLayoutX(lblBackground1.getLayoutX() + 819);
 
@@ -28,59 +33,50 @@ public class MainViewController {
             root.getScene()
                     .setOnKeyPressed(keyEvent -> {
                         if (keyEvent.getCode() == KeyCode.SPACE) {
-                            lblMan.setLayoutY(lblMan.getLayoutY() - 200);
-                            if (lblMan.getLayoutY() < 100) lblMan.setLayoutY(320);
+                            if (lblMan.getLayoutY() == 113) {
+                                lblMan.setLayoutY(lblMan.getLayoutY() + 200);
+                            } else {
+                                lblMan.setLayoutY(lblMan.getLayoutY() - 200);
+                            }
                         }
                     });
         });
 
-        KeyFrame kf1 = new KeyFrame(Duration.millis(400), actionEvent -> {
+        KeyFrame kf1 = new KeyFrame(Duration.millis(5), actionEvent -> {
             if (lblObject.getLayoutX() < -20) lblObject.setLayoutX(860);
             else {
-                lblObject.setLayoutX(lblObject.getLayoutX() - 20);
-
-                if (lblObject.getLayoutX()  == lblMan.getLayoutX() && lblMan.getLayoutY() == lblObject.getLayoutY()) {
-                    lblMan.setVisible(false);
-                }
+                lblObject.setLayoutX(lblObject.getLayoutX() - 1);
+                gameOver();
             }
         });
 
-        KeyFrame kf2 = new KeyFrame(Duration.millis(0), actionEvent -> {
+        KeyFrame kf2 = new KeyFrame(Duration.millis(5), actionEvent -> {
             if (lblBackground1.getLayoutX() == -820) lblBackground1.setLayoutX(0);
-            else lblBackground1.setLayoutX(lblBackground1.getLayoutX() - 20);
+            else lblBackground1.setLayoutX(lblBackground1.getLayoutX() - 1);
             lblBackground2.setLayoutX(lblBackground1.getLayoutX() + 819);
         });
 
-        KeyFrame kf3 = new KeyFrame(Duration.millis(300), actionEvent -> {
+        KeyFrame kf3 = new KeyFrame(Duration.millis(5), actionEvent -> {
             if (lblObject2.getLayoutX() < -20) lblObject2.setLayoutX(860);
             else {
-                lblObject2.setLayoutX(lblObject2.getLayoutX() - 20);
-
-                if (lblObject2.getLayoutX() == lblMan.getLayoutX() && lblObject2.getLayoutY() == lblMan.getLayoutY()) {
-                    lblMan.setVisible(false);
-                }
+                lblObject2.setLayoutX(lblObject2.getLayoutX() - 1);
+                gameOver();
             }
         });
 
-        KeyFrame kf4 = new KeyFrame(Duration.millis(500), actionEvent -> {
+        KeyFrame kf4 = new KeyFrame(Duration.millis(5), actionEvent -> {
             if (lblCoin.getLayoutX() < -20) lblCoin.setLayoutX(860);
             else {
-                lblCoin.setLayoutX(lblCoin.getLayoutX() - 20);
-
-                if (lblCoin.getLayoutX() == lblMan.getLayoutX() && lblCoin.getLayoutY() == lblMan.getLayoutY()) {
-                    lblCoin.setVisible(false);
-                }
+                lblCoin.setLayoutX(lblCoin.getLayoutX() - 1);
+                collectCoins();
             }
         });
 
-        KeyFrame kf5 = new KeyFrame(Duration.millis(400), actionEvent -> {
+        KeyFrame kf5 = new KeyFrame(Duration.millis(1), actionEvent -> {
             if(lblBTC.getLayoutX() < -20) lblBTC.setLayoutX(860);
             else {
-                lblBTC.setLayoutX(lblBTC.getLayoutX() - 20);
-
-                if (lblBTC.getLayoutX() == lblMan.getLayoutX() && lblBTC.getLayoutY() == lblMan.getLayoutY()) {
-                    lblBTC.setVisible(false);
-                }
+                lblBTC.setLayoutX(lblBTC.getLayoutX() - 1);
+                collectCoins();
             }
         });
 
@@ -88,5 +84,39 @@ public class MainViewController {
         TIME_LINE.setCycleCount(Animation.INDEFINITE);
         TIME_LINE.setAutoReverse(true);
         TIME_LINE.play();
+    }
+
+    private void collectCoins(){
+
+        if (lblCoin.getLayoutX() == lblMan.getLayoutX() && lblCoin.getLayoutY() == lblMan.getLayoutY()) {
+            lblCoin.setVisible(false);
+            countScore();
+        }
+        if (lblBTC.getLayoutX() == lblMan.getLayoutX() && lblBTC.getLayoutY() == lblMan.getLayoutY()) {
+            lblBTC.setVisible(false);
+            countScore();
+        }
+        if (lblCoin.getLayoutX() < -20) {
+            lblCoin.setVisible(true);
+        }
+        if (lblBTC.getLayoutX() < -20) {
+            lblBTC.setVisible(true);
+        }
+    }
+
+    private void gameOver(){
+
+        if (lblObject.getLayoutX()  == 300 && lblObject.getLayoutY() == lblMan.getLayoutY()) {
+            TIME_LINE.stop();
+            lblGameOver.setText("Game Over!");
+        }
+        if (lblObject2.getLayoutX() == 300 && lblObject2.getLayoutY() == lblMan.getLayoutY()) {
+            TIME_LINE.stop();
+            lblGameOver.setText("Game Over!");
+        }
+    }
+
+    private void countScore(){
+        lblScore.setText(String.valueOf(count = count + 1));
     }
 }

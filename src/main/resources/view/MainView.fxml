@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep12.mini_game.controller.MainViewController">
    <children>
@@ -25,7 +26,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label fx:id="lblMan" layoutX="300.0" layoutY="313.0" prefHeight="153.0" prefWidth="128.0">
+      <Label fx:id="lblMan" layoutX="300.0" layoutY="113.0" prefHeight="153.0" prefWidth="128.0">
          <graphic>
             <ImageView fitHeight="134.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,6 +70,21 @@
                </image>
             </ImageView>
          </graphic>
+      </Label>
+      <Label prefHeight="40.0" prefWidth="62.0" text="Score :" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblScore" prefHeight="40.0" prefWidth="73.0" style="-fx-text-fill: green;" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblGameOver" alignment="CENTER" prefHeight="153.0" prefWidth="820.0" style="-fx-text-fill: red;" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font size="30.0" />
+         </font>
       </Label>
    </children>
 </AnchorPane>
